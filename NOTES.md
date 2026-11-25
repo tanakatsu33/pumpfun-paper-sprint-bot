@@ -22,3 +22,13 @@ momentum: 600-slot window, net >= 5 SOL, >= 8 buyers, rq 10..60, within 10% of h
 0.1 SOL max, 2 open, 0.25 SOL deployed max, stop -8%, trail 6% after +8%, hold 600 slots.
 - dev: net -0.1938 SOL, max DD 2.08%, 88 fills, 40 coins (44 round trips), win rate 27%.
 - Verdict: the momentum sleeve loses money, matching the event study.
+
+## v2: probes only (momentum sleeve disabled)
+Probe parameters unchanged from v1 (see above); the momentum sleeve is turned off.
+- dev (commit 6091913): net -0.017273919 SOL (90% interval -0.030244377 .. -0.004638753),
+  max DD 0.001881206 (0.19%), 46 fills over 23 coins, 23 round trips.
+- Fees: 0.005650927 SOL curve + 0.004830000 SOL tx.
+- Guardrails met: 23 coins with a round trip of at least 0.01 SOL, drawdown ok.
+- Deterministic regrade reproduced byte for byte.
+- Verdict: momentum sleeve removed after the event study and v1 grade both showed it losing; v2 keeps
+  the loss to roughly the probe fee cost while meeting all guardrails with margin.
