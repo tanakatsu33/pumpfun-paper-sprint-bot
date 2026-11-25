@@ -69,7 +69,7 @@ export const DEFAULT_PARAMS: Params = {
   probeTarget_: 0.1,
   probeSpacingSlots: 20,
   relaxAfterSlots: 12_000,
-  momEnabled: true,
+  momEnabled: false, // v1 grading: the sleeve lost money on dev; kept for reference only
   momMaxOpen: 2,
   momMaxLamports: 100_000_000n,
   momMaxDeployedLamports: 250_000_000n,
